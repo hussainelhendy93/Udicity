@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { filterImageFromURL, deleteLocalFiles } from './util/util';
 import fs from "fs";
@@ -38,8 +38,8 @@ import fs from "fs";
     res.send("try GET /filteredimage?image_url={{}}")
   });
 
-  app.get("/filteredimage/", (req, res) => {
-    let { image_url } = req.query;
+  app.get("/filteredimage/", (req: Request, res: Response) => {
+    let { image_url }: { image_url: string } = req.query
 
     if (!image_url) {
       return res.status(400)
