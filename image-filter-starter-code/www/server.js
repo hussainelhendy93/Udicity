@@ -53,7 +53,7 @@ const fs_1 = __importDefault(require("fs"));
                 if (err) {
                     console.log(err);
                     return res.status(500)
-                        .send(`There is an error happend while processing the image,  Please contact the administrators , ${err}!`);
+                        .send(`There is an error happend while processing the image, Please contact the administrators, ${err}!`);
                 }
                 fs_1.default.unlinkSync(path);
             });
@@ -61,7 +61,7 @@ const fs_1 = __importDefault(require("fs"));
         })
             .catch(function (error) {
             return res.status(400)
-                .send(`There is an error happend while processing the image,  Please contact the administrators , ${error}!`);
+                .send(`There is an error happend while processing the image, Please contact the administrators , ${error}!`);
         });
     });
     // Start the Server
